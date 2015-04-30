@@ -10,7 +10,7 @@ $ npm install react-tinymce
 
 ## Demo
 
-http://mzabriskie.github.io/react-tinymce/example/
+http://mzabriskie.github.io/react-tinymce/
 
 ## Example
 
