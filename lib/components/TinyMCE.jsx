@@ -1,6 +1,7 @@
 var React = require('react');
 var uuid = require('../helpers/uuid');
 var uc_first = require('../helpers/uc_first');
+var _ = require('lodash');
 
 var EVENTS = [
   'activate', 'blur', 'change', 'deactivate', 'focus', 'hide',
@@ -66,7 +67,9 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
-    tinymce.init(this.props.config);
+    if (!_.isEqual(this.props.config, nextProps.config)) {
+      tinymce.init(nextProps.config);
+    }
 
     if (this.props.content !== nextProps.content) {
       setTimeout(function () {
