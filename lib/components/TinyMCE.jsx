@@ -55,6 +55,7 @@ module.exports = React.createClass({
     };
 
     tinymce.init(this.props.config);
+
     setTimeout(function () {
       tinymce.get(this.id).setContent(this.props.content);
     }.bind(this), 0);
@@ -62,6 +63,14 @@ module.exports = React.createClass({
 
   componentWillUnmount: function () {
     tinymce.remove(this.id);
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (this.props.content !== nextProps.content) {
+      setTimeout(function () {
+        tinymce.get(this.id).setContent(nextProps.content);
+      }.bind(this), 0);
+    }
   },
 
   render: function () {
