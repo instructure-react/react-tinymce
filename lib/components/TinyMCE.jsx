@@ -66,6 +66,8 @@ module.exports = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps) {
+    tinymce.init(this.props.config);
+
     if (this.props.content !== nextProps.content) {
       setTimeout(function () {
         tinymce.get(this.id).setContent(nextProps.content);
