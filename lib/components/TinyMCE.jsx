@@ -56,10 +56,9 @@ module.exports = React.createClass({
     };
 
     tinymce.init(this.props.config);
-
     setTimeout(function () {
       tinymce.get(this.id).setContent(this.props.content);
-    }.bind(this), 0);
+    }.bind(this), 1);
   },
 
   componentWillUnmount: function () {
@@ -71,11 +70,15 @@ module.exports = React.createClass({
       tinymce.init(nextProps.config);
     }
 
-    if (this.props.content !== nextProps.content) {
+    if (!_.isEqual(this.props.content, nextProps.content)) {
       setTimeout(function () {
         tinymce.get(this.id).setContent(nextProps.content);
       }.bind(this), 0);
     }
+  },
+
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return ( !_.isEqual(this.props.content, nextProps.content) || !_.isEqual(this.props.config, nextProps.config) );
   },
 
   render: function () {
