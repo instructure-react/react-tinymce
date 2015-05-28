@@ -1,6 +1,7 @@
 var React = require('react');
 var uuid = require('../helpers/uuid');
 var uc_first = require('../helpers/uc_first');
+var _ = require('lodash');
 
 var EVENTS = [
   'activate', 'blur', 'change', 'deactivate', 'focus', 'hide',
@@ -57,11 +58,27 @@ module.exports = React.createClass({
     tinymce.init(this.props.config);
     setTimeout(function () {
       tinymce.get(this.id).setContent(this.props.content);
-    }.bind(this), 0);
+    }.bind(this), 1);
   },
 
   componentWillUnmount: function () {
     tinymce.remove(this.id);
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+    if (!_.isEqual(this.props.config, nextProps.config)) {
+      tinymce.init(nextProps.config);
+    }
+
+    if (!_.isEqual(this.props.content, nextProps.content)) {
+      setTimeout(function () {
+        tinymce.get(this.id).setContent(nextProps.content);
+      }.bind(this), 0);
+    }
+  },
+
+  shouldComponentUpdate: function(nextProps, nextState) {
+    return ( !_.isEqual(this.props.content, nextProps.content) || !_.isEqual(this.props.config, nextProps.config) );
   },
 
   render: function () {

@@ -28,6 +28,7 @@
     "karma-browserify": "^4.1.2",
     "karma-firefox-launcher": "^0.1.4",
     "karma-mocha": "^0.1.10",
+    "lodash": "~3.7.0",
     "mocha": "^2.2.4",
     "rackt-cli": "^0.1.2",
     "reactify": "^1.1.0"
