@@ -141,7 +141,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  _remove: function _remove() {
-	    tinymce.remove(this.id);
+	    tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
 	    this._isInit = false;
 	  },
 	
