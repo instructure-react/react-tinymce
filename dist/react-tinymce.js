@@ -110,7 +110,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    if (!isEqual(this.props.config, nextProps.config)) {
-	      this._init(nextProps.config);
+	      this._init(nextProps.config, nextProps.content);
 	    }
 	  },
 	
@@ -118,7 +118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    return !isEqual(this.props.content, nextProps.content) || !isEqual(this.props.config, nextProps.config);
 	  },
 	
-	  _init: function _init(config) {
+	  _init: function _init(config, content) {
 	    if (this._isInit) {
 	      this._remove();
 	    }
@@ -134,6 +134,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	          handler(e, editor);
 	        });
 	      });
+	      // need to set content here because the textarea will still have the
+	      // old `this.props.content`
+	      if (content) {
+	        editor.on('init', function () {
+	          editor.setContent(content);
+	        });
+	      }
 	    };
 	
 	    tinymce.init(config);
