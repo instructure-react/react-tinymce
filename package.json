@@ -13,14 +13,11 @@
   ],
   "author": "Matt Zabriskie",
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^0.13.3"
-  },
   "devDependencies": {
-    "rackt-cli": "^0.2.0",
-    "react": "^0.13.3"
+    "rackt-cli": "^0.2.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^3.9.3",
+    "react": "^0.13.3"
   }
 }
