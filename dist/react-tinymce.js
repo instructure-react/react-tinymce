@@ -124,6 +124,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	
 	    var self = this;
+	
+	    //hide the textarea that is me so that no one sees it
+	    self.getDOMNode().style.hidden = 'hidden';
+	
 	    config.selector = '#' + this.id;
 	    config.setup = function (editor) {
 	      EVENTS.forEach(function (event, index) {
@@ -144,6 +148,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	
 	    tinymce.init(config);
+	
+	    self.getDOMNode().style.hidden = '';
+	
 	    this._isInit = true;
 	  },
 	
