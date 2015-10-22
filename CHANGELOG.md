@@ -1,3 +1,10 @@
+v0.3.0 - Thu, 22 Oct 2015 08:40:36 GMT
+--------------------------------------
+
+- [5aebd62](../../commit/5aebd62) [changed] supporting React 0.14.0
+- [0835f12](../../commit/0835f12) [changed] supporting React 0.14.0
+
+
 v0.2.3 - Fri, 24 Jul 2015 00:47:50 GMT
 --------------------------------------
 
