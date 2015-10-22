@@ -15,15 +15,16 @@ http://mzabriskie.github.io/react-tinymce/
 ## Example
 
 ```js
-var React = require('react');
-var TinyMCE = require('react-tinymce');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TinyMCE from 'react-tinymce';
 
-var App = React.createClass({
-  handleEditorChange: function (e) {
+const App = React.createClass({
+  handleEditorChange(e) {
     console.log(e.target.getContent());
   },
 
-  render: function () {
+  render() {
     return (
       <TinyMCE
         content="<p>This is the initial content of the editor</p>"
@@ -37,7 +38,7 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.getElementById('container'));
+ReactDOM.render(<App/>, document.getElementById('container'));
 ```
 
 ## License
