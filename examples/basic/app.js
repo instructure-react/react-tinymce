@@ -1,7 +1,8 @@
-var React = require('react');
-var TinyMCE = require('../../lib/main');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import TinyMCE from '../../lib/main';
 
-var STYLES = {
+const STYLES = {
   container: {
     fontFamily: 'Helvetica Neue, sans-serif',
     padding: '0 25px'
@@ -16,20 +17,20 @@ var STYLES = {
   }
 };
 
-var App = React.createClass({
-  getInitialState: function () {
+const App = React.createClass({
+  getInitialState() {
     return {
       content: '<p><strong>Welcome to react-tinymce</strong></p>'
     };
   },
 
-  handleEditorChange: function (e) {
+  handleEditorChange(e) {
     this.setState({
       content: e.target.getContent()
     });
   },
- 
-  render: function () {
+
+  render() {
     return (
       <div style={STYLES.container}>
         <h1>react-tinymce</h1>
@@ -45,4 +46,4 @@ var App = React.createClass({
   }
 });
 
-React.render(<App/>, document.getElementById('example'));
+ReactDOM.render(<App/>, document.getElementById('example'));
