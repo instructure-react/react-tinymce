@@ -4,8 +4,8 @@
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
-    "test": "node_modules/.bin/rackt test --ci --browsers Firefox",
-    "start": "node_modules/.bin/rackt dev"
+    "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
+    "start": "node_modules/.bin/rackt server"
   },
   "keywords": [
     "tinymce",
@@ -14,11 +14,11 @@
   "author": "Matt Zabriskie",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.0"
   },
   "devDependencies": {
-    "rackt-cli": "^0.2.0",
-    "react": "^0.13.3"
+    "rackt-cli": "^0.5.2",
+    "react": "^0.14.0"
   },
   "dependencies": {
     "lodash": "^3.9.3"
