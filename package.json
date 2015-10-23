@@ -7,6 +7,7 @@
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
     "start": "node_modules/.bin/rackt server"
   },
+  "homepage": "https://github.com/instructure-react/react-tinymce",
   "keywords": [
     "tinymce",
     "react-component"
