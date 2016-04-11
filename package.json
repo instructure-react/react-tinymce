@@ -28,6 +28,6 @@
     "react-dom": "^0.14.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^4.7.0"
   }
 }
