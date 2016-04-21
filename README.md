@@ -67,7 +67,12 @@ To make sure the linter is happy and the functional tests run, execute:
 
 `./node_modules/.bin/rackt test`
 
-To release, use `./node_modules/.bin/rackt release`
+To release, you'll need to be an npm owner for react-tinymce, and already
+have your machine currently authed with `npm adduser`
+
+https://docs.npmjs.com/cli/adduser
+
+use `./node_modules/.bin/rackt release`
 
 ## License
 
