@@ -125,11 +125,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  componentDidUpdate: function componentDidUpdate(prevProps) {
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, prevProps.id)) {
-	      this.id = this.props.id;
-	    }
 	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, prevProps.config)) {
 	      this._init(this.props.config, this.props.content);
+	    }
+	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, prevProps.id)) {
+	      this.id = this.props.id;
 	    }
 	  },
 	
@@ -202,7 +202,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  _remove: function _remove() {
-	    tinymce.EditorManager.execCommand('mceRemoveEditor', true, this.id);
+	    tinymce.get(this.id).remove();
+	    //  EditorManager.execCommand('mceRemoveEditor', true, this.id);
 	    this._isInit = false;
 	  }
 	});
