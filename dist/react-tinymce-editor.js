@@ -182,7 +182,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // old `this.props.content`
 	      if (content) {
 	        editor.on('init', function () {
-	          editor.setContent(content);
+	          setTimeout(function () {
+	            editor.setContent(content);
+	          }, 100);
 	        });
 	      }
 	      if (hasSetupCallback) {
