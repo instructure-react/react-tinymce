@@ -5,7 +5,10 @@
   "main": "lib/main.js",
   "scripts": {
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
-    "start": "node_modules/.bin/rackt server"
+    "start": "node_modules/.bin/rackt server",
+    "build": "node_modules/.bin/rackt build",
+    "pages": "node_modules/.bin/rackt pages",
+    "release" : "node_modules/.bin/rackt release"
   },
   "repository": {
     "type": "git",
