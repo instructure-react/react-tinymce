@@ -122,7 +122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	  componentDidMount: function componentDidMount() {
 	    var config = (0, _lodashLangClone2['default'])(this.props.config);
-	    var content = (0, _lodashLangClone2['default'])(this.props.content || "");
+	    var content = (0, _lodashLangClone2['default'])(this.props.content || '');
 	    this._init(config, content);
 	  },
 	
@@ -163,7 +163,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	
 	    // hide the textarea that is me so that no one sees it
-	    if (this.isMounted()) (0, _reactDom.findDOMNode)(this).style.hidden = 'hidden';
+	    if (this.isMounted()) {
+	      (0, _reactDom.findDOMNode)(this).style.hidden = 'hidden';
+	    }
 	
 	    var setupCallback = config.setup;
 	    var hasSetupCallback = typeof setupCallback === 'function';
@@ -192,7 +194,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    tinymce.init(config);
 	
-	    if (this.isMounted()) (0, _reactDom.findDOMNode)(this).style.hidden = '';
+	    if (this.isMounted()) {
+	      (0, _reactDom.findDOMNode)(this).style.hidden = '';
+	    }
 	
 	    this._isInit = true;
 	  },

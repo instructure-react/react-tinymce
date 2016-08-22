@@ -1,6 +1,6 @@
 {
   "name": "react-tinymce-editor",
-  "version": "0.6.1",
+  "version": "0.6.3",
   "description": "React TinyMCE Editor component",
   "main": "lib/main.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "node_modules/.bin/rackt server",
     "build": "node_modules/.bin/rackt build",
     "pages": "node_modules/.bin/rackt pages",
-    "release" : "node_modules/.bin/rackt release"
+    "release": "node_modules/.bin/rackt release"
   },
   "repository": {
     "type": "git",
