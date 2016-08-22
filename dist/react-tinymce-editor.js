@@ -66,6 +66,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	
 	var _react = __webpack_require__(2);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -121,15 +123,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  componentDidMount: function componentDidMount() {
 	    var config = (0, _lodashLangClone2['default'])(this.props.config);
 	    var content = (0, _lodashLangClone2['default'])(this.props.content || '');
-	    this._init(config, content);
+	    this._init(config, content, this.props.id);
 	  },
+	  _getPropData: function _getPropData(props) {
+	    var content = props.content;
 	
-	  componentDidUpdate: function componentDidUpdate(prevProps) {
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, prevProps.config)) {
-	      this._init(this.props.config, this.props.content);
-	    }
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, prevProps.id)) {
-	      this.id = this.props.id;
+	    var partialprops = _objectWithoutProperties(props, ['content']);
+	
+	    this.content = content;
+	    return partialprops;
+	  },
+	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
+	    if (!(0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props))) {
+	      this._init(nextProps.config, nextProps.content, nextProps.id);
 	    }
 	  },
 	
@@ -138,7 +144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  componentWillUnmount: function componentWillUnmount() {
-	    this._remove();
+	    this._remove(this.props.id);
 	  },
 	
 	  render: function render() {
@@ -153,13 +159,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	  },
 	
-	  _init: function _init(config, content) {
+	  _init: function _init(config, content, id) {
 	    var _this = this;
 	
 	    if (this._isInit) {
-	      this._remove();
+	      this._remove(this.props.id);
 	    }
-	
+	    this.id = id;
 	    // hide the textarea that is me so that no one sees it
 	    if (document.getElementById(this.id)) {
 	      document.getElementById(this.id).style.hidden = 'hidden';
@@ -201,8 +207,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._isInit = true;
 	  },
 	
-	  _remove: function _remove() {
-	    tinymce.EditorManager.execCommand('mceRemoveControl', true, this.id);
+	  _remove: function _remove(id) {
+	    tinymce.EditorManager.execCommand('mceRemoveControl', true, id);
 	    this._isInit = false;
 	  }
 	});
