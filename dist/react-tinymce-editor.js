@@ -124,12 +124,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this._init(config, content);
 	  },
 	
-	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config)) {
-	      this._init(nextProps.config, nextProps.content);
+	  componentDidUpdate: function componentDidUpdate(prevProps) {
+	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, prevProps.id)) {
+	      this.id = this.props.id;
 	    }
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, nextProps.id)) {
-	      this.id = nextProps.id;
+	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, prevProps.config)) {
+	      this._init(this.props.config, this.props.content);
 	    }
 	  },
 	
