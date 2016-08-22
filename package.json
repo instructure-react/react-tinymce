@@ -21,7 +21,7 @@
     "react-wyswing",
     "wyswwing-editor-for-react"
   ],
-  "author": "Matt Zabriskie",
+  "author": "Matt Zabriskie, Abhimanyu Singh rathore",
   "license": "MIT",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
