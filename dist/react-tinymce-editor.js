@@ -182,9 +182,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      // old `this.props.content`
 	      if (content) {
 	        editor.on('init', function () {
-	          setTimeout(function () {
-	            editor.setContent(content);
-	          }, 100);
+	          //  setTimeout(()=>{
+	          editor.setContent(content);
+	          //  }, 100);
 	        });
 	      }
 	      if (hasSetupCallback) {
@@ -202,8 +202,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  _remove: function _remove() {
-	    tinymce.get(this.id).remove();
-	    //  EditorManager.execCommand('mceRemoveEditor', true, this.id);
+	    tinymce.EditorManager.execCommand('mceRemoveControl', true, this.id);
 	    this._isInit = false;
 	  }
 	});
