@@ -123,7 +123,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  componentDidMount: function componentDidMount() {
 	    var config = (0, _lodashLangClone2['default'])(this.props.config);
 	    var content = (0, _lodashLangClone2['default'])(this.props.content || '');
-	    this._init(config, content, this.props.id);
+	    this._init(config, content, this.id);
 	  },
 	  _getPropData: function _getPropData(props) {
 	    var content = props.content;
@@ -135,7 +135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
 	    if (!(0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props))) {
-	      this._init(nextProps.config, nextProps.content, nextProps.id);
+	      this._init(nextProps.config, nextProps.content, nextProps.id || this.id);
 	    }
 	  },
 	
@@ -144,7 +144,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  componentWillUnmount: function componentWillUnmount() {
-	    this._remove(this.props.id);
+	    this._remove(this.id);
 	  },
 	
 	  render: function render() {
@@ -163,7 +163,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _this = this;
 	
 	    if (this._isInit) {
-	      this._remove(this.props.id);
+	      this._remove(this.id);
 	    }
 	    this.id = id;
 	    // hide the textarea that is me so that no one sees it
