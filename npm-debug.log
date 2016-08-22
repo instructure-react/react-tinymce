@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/mnt/install/nvm/install/versions/node/v6.3.0/bin/node',
+1 verbose cli   '/mnt/install/nvm/install/versions/node/v6.3.0/bin/npm',
+1 verbose cli   'start' ]
+2 info using npm@3.10.3
+3 info using node@v6.3.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle react-tinymce-editor@0.6.1~prestart: react-tinymce-editor@0.6.1
+6 silly lifecycle react-tinymce-editor@0.6.1~prestart: no script for prestart, continuing
+7 info lifecycle react-tinymce-editor@0.6.1~start: react-tinymce-editor@0.6.1
+8 verbose lifecycle react-tinymce-editor@0.6.1~start: unsafe-perm in lifecycle true
+9 verbose lifecycle react-tinymce-editor@0.6.1~start: PATH: /mnt/install/nvm/install/versions/node/v6.3.0/lib/node_modules/npm/bin/node-gyp-bin:/home/abhimanyu/phantom/react-tinymce-editor/node_modules/.bin:/mnt/install/nvm/install/versions/node/v6.3.0/bin:/mnt/install/nvm/install/versions/node/v6.3.0/bin:/home/abhimanyu/google-cloud-sdk/bin:/mnt/install/node-v5.10.0-linux-x64/bin:/mnt/install/jdk1.8.0_77/bin:/mnt/install/jdk1.8.0_77/bin:/mnt/install/apache-maven-3.2.3/bin:/mnt/install/phantomjs-2.1.1-linux-x86_64/bin:/mnt/install/mongodb/mongodb-linux-x86_64-3.2.8/bin:/home/abhimanyu/google-cloud-sdk/bin:/mnt/install/node-v5.10.0-linux-x64/bin:/mnt/install/jdk1.8.0_77/bin:/mnt/install/jdk1.8.0_77/bin:/mnt/install/apache-maven-3.2.3/bin:/mnt/install/phantomjs-2.1.1-linux-x86_64/bin:/mnt/install/mongodb/mongodb-linux-x86_64-3.2.8/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/home/abhimanyu/.local/bin:/home/abhimanyu/bin
+10 verbose lifecycle react-tinymce-editor@0.6.1~start: CWD: /home/abhimanyu/phantom/react-tinymce-editor
+11 silly lifecycle react-tinymce-editor@0.6.1~start: Args: [ '-c', 'rackt server' ]
+12 info lifecycle react-tinymce-editor@0.6.1~start: Failed to exec start script
+13 verbose stack Error: react-tinymce-editor@0.6.1 start: `rackt server`
+13 verbose stack spawn ENOENT
+13 verbose stack     at ChildProcess.<anonymous> (/mnt/install/nvm/install/versions/node/v6.3.0/lib/node_modules/npm/lib/utils/spawn.js:33:16)
+13 verbose stack     at emitTwo (events.js:106:13)
+13 verbose stack     at ChildProcess.emit (events.js:191:7)
+13 verbose stack     at maybeClose (internal/child_process.js:852:16)
+13 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
+14 verbose pkgid react-tinymce-editor@0.6.1
+15 verbose cwd /home/abhimanyu/phantom/react-tinymce-editor
+16 error Linux 3.10.0-327.28.2.el7.x86_64
+17 error argv "/mnt/install/nvm/install/versions/node/v6.3.0/bin/node" "/mnt/install/nvm/install/versions/node/v6.3.0/bin/npm" "start"
+18 error node v6.3.0
+19 error npm  v3.10.3
+20 error file sh
+21 error code ELIFECYCLE
+22 error errno ENOENT
+23 error syscall spawn
+24 error react-tinymce-editor@0.6.1 start: `rackt server`
+24 error spawn ENOENT
+25 error Failed at the react-tinymce-editor@0.6.1 start script 'rackt server'.
+25 error Make sure you have the latest version of node.js and npm installed.
+25 error If you do, this is most likely a problem with the react-tinymce-editor package,
+25 error not with npm itself.
+25 error Tell the author that this fails on your system:
+25 error     rackt server
+25 error You can get information on how to open an issue for this project with:
+25 error     npm bugs react-tinymce-editor
+25 error Or if that isn't available, you can get their info via:
+25 error     npm owner ls react-tinymce-editor
+25 error There is likely additional logging output above.
+26 verbose exit [ 1, true ]

@@ -1,6 +1,6 @@
-# react-tinymce
+# react-tinymce-editor
 
-React TinyMCE component
+React TinyMCE Editor component
 
 ## Installing
 
@@ -10,14 +10,14 @@ $ npm install react-tinymce
 
 ## Demo
 
-http://instructure-react.github.io/react-tinymce/
+http://abhirathore2006.github.io/react-tinymce-editor/
 
 ## Example
 
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
-import TinyMCE from 'react-tinymce';
+import TinyMCE from 'react-tinymce-editor';
 
 const App = React.createClass({
   handleEditorChange(e) {
@@ -67,7 +67,7 @@ To make sure the linter is happy and the functional tests run, execute:
 
 `./node_modules/.bin/rackt test`
 
-To release, you'll need to be an npm owner for react-tinymce, and already
+To release, you'll need to be an npm owner for react-tinymce-editor, and already
 have your machine currently authed with `npm adduser`
 
 https://docs.npmjs.com/cli/adduser
