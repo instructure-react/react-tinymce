@@ -1,3 +1,9 @@
+v0.8.1 - Tue, 23 Aug 2016 07:08:17 GMT
+--------------------------------------
+
+- [01adfa8](../../commit/01adfa8) [fixed] tinymce.4.2.7.min.js Uncaught TypeError: Cannot read property body [fixed] use the latest handler passed in by the props [Added] reset props which excepts a number ( any number ) and reset editor if its different from previous prop, this is necessary evil to prevent editor from reseting everytime
+
+
 v0.7.2 - Mon, 22 Aug 2016 13:33:27 GMT
 --------------------------------------
 

@@ -64,15 +64,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	function _interopRequireDefault(obj) {
-	  return obj && obj.__esModule ? obj : { 'default': obj };
-	}
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	function _objectWithoutProperties(obj, keys) {
-	  var target = {};for (var i in obj) {
-	    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-	  }return target;
-	}
+	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 	
 	var _react = __webpack_require__(2);
 	
@@ -149,7 +143,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
-	    if ((0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props)) && this.props.content != nextProps.content && (this._isInit !== undefined && this._isInit === true)) {
+	    if ((0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props)) && this.props.content !== nextProps.content && (this._isInit !== undefined && this._isInit === true)) {
 	      this.editor.setContent(nextProps.content);
 	    }
 	    return !(0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props));
@@ -175,13 +169,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var _this = this;
 	
 	    setTimeout(function () {
-	      console.log("reseting");
 	      var oldId = _this.id;
 	      _this.id = id;
-	      // hide the textarea that is me so that no one sees it
-	      /** if (document.getElementById(this.id)) {
-	        document.getElementById(this.id).style.hidden = 'hidden';
-	      } **/
 	
 	      var setupCallback = config.setup;
 	      var hasSetupCallback = typeof setupCallback === 'function';
@@ -193,10 +182,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          if (typeof handler !== 'function') return;
 	          editor.on(event, function (e) {
 	            // native DOM events don't have access to the editor so we pass it here
-	            //setTimeout(()=>{
 	            handler(e, editor);
-	            //},10);
-	            //editor
 	          });
 	        });
 	        // need to set content here because the textarea will still have the
@@ -214,9 +200,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this._remove(oldId);
 	      }
 	      tinymce.init(config);
-	      /** if (document.getElementById(this.id)) {
-	        document.getElementById(this.id).style.hidden = '';
-	      } **/
 	      _this._isInit = true;
 	    }, 5);
 	  },
