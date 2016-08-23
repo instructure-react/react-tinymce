@@ -40,6 +40,10 @@ const App = React.createClass({
 
 ReactDOM.render(<App/>, document.getElementById('container'));
 ```
+## Note :  
+
+Do not use handler like this.someFunc.bind(this), this will result props compare to fail and it reset on every change.
+Solution: Bind the func to this in constructor and just use this.someFunc in handler
 
 ## Dependency
 
