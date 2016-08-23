@@ -64,9 +64,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : { 'default': obj };
+	}
 	
-	function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+	function _objectWithoutProperties(obj, keys) {
+	  var target = {};for (var i in obj) {
+	    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+	  }return target;
+	}
 	
 	var _react = __webpack_require__(2);
 	
@@ -106,7 +112,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    config: _react2['default'].PropTypes.object,
 	    content: _react2['default'].PropTypes.string,
 	    id: _react2['default'].PropTypes.string,
-	    className: _react2['default'].PropTypes.string
+	    className: _react2['default'].PropTypes.string,
+	    reset: _react2['default'].PropTypes.number
 	  },
 	
 	  getDefaultProps: function getDefaultProps() {
@@ -127,10 +134,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  _getPropData: function _getPropData(props) {
 	    var content = props.content;
+	    var config = props.config;
 	
-	    var partialprops = _objectWithoutProperties(props, ['content']);
+	    var partialprops = _objectWithoutProperties(props, ['content', 'config']);
 	
 	    this.content = content;
+	    this.config1 = config;
 	    return partialprops;
 	  },
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
@@ -140,7 +149,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
-	    return !(0, _lodashLangIsEqual2['default'])(this.props.content, nextProps.content) || !(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config);
+	    if ((0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props)) && this.props.content != nextProps.content && (this._isInit !== undefined && this._isInit === true)) {
+	      this.editor.setContent(nextProps.content);
+	    }
+	    return !(0, _lodashLangIsEqual2['default'])(this._getPropData(nextProps), this._getPropData(this.props));
 	  },
 	
 	  componentWillUnmount: function componentWillUnmount() {
@@ -162,53 +174,55 @@ return /******/ (function(modules) { // webpackBootstrap
 	  _init: function _init(config, content, id) {
 	    var _this = this;
 	
-	    if (this._isInit) {
-	      this._remove(this.id);
-	    }
-	    this.id = id;
-	    // hide the textarea that is me so that no one sees it
-	    if (document.getElementById(this.id)) {
-	      document.getElementById(this.id).style.hidden = 'hidden';
-	    }
+	    setTimeout(function () {
+	      console.log("reseting");
+	      var oldId = _this.id;
+	      _this.id = id;
+	      // hide the textarea that is me so that no one sees it
+	      /** if (document.getElementById(this.id)) {
+	        document.getElementById(this.id).style.hidden = 'hidden';
+	      } **/
 	
-	    var setupCallback = config.setup;
-	    var hasSetupCallback = typeof setupCallback === 'function';
-	
-	    config.selector = '#' + this.id;
-	    config.setup = function (editor) {
-	      EVENTS.forEach(function (event, index) {
-	        var handler = _this.props[HANDLER_NAMES[index]];
-	        if (typeof handler !== 'function') return;
-	        editor.on(event, function (e) {
-	          // native DOM events don't have access to the editor so we pass it here
-	          handler(e, editor);
+	      var setupCallback = config.setup;
+	      var hasSetupCallback = typeof setupCallback === 'function';
+	      config.selector = '#' + _this.id;
+	      config.setup = function (editor) {
+	        _this.editor = editor;
+	        EVENTS.forEach(function (event, index) {
+	          var handler = _this.props[HANDLER_NAMES[index]];
+	          if (typeof handler !== 'function') return;
+	          editor.on(event, function (e) {
+	            // native DOM events don't have access to the editor so we pass it here
+	            //setTimeout(()=>{
+	            handler(e, editor);
+	            //},10);
+	            //editor
+	          });
 	        });
-	      });
-	      // need to set content here because the textarea will still have the
-	      // old `this.props.content`
-	      if (content) {
-	        editor.on('init', function () {
-	          //  setTimeout(()=>{
-	          editor.setContent(content);
-	          //  }, 100);
-	        });
+	        // need to set content here because the textarea will still have the
+	        // old `this.props.content`
+	        if (content) {
+	          editor.on('init', function () {
+	            editor.setContent(content);
+	          });
+	        }
+	        if (hasSetupCallback) {
+	          setupCallback(editor);
+	        }
+	      };
+	      if (_this._isInit) {
+	        _this._remove(oldId);
 	      }
-	      if (hasSetupCallback) {
-	        setupCallback(editor);
-	      }
-	    };
-	
-	    tinymce.init(config);
-	
-	    if (document.getElementById(this.id)) {
-	      document.getElementById(this.id).style.hidden = '';
-	    }
-	
-	    this._isInit = true;
+	      tinymce.init(config);
+	      /** if (document.getElementById(this.id)) {
+	        document.getElementById(this.id).style.hidden = '';
+	      } **/
+	      _this._isInit = true;
+	    }, 5);
 	  },
 	
 	  _remove: function _remove(id) {
-	    tinymce.EditorManager.execCommand('mceRemoveControl', true, id);
+	    tinymce.EditorManager.execCommand('mceRemoveEditor', false, id);
 	    this._isInit = false;
 	  }
 	});
