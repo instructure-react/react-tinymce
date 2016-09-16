@@ -161,7 +161,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }) : _react2['default'].createElement('textarea', {
 	      id: this.id,
 	      className: this.props.className,
-	      defaultValue: this.props.content
+	      value: this.props.content
 	    });
 	  },
 	
