@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["React", "ReactDOM"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactTinymce"] = factory(require("React"), require("ReactDOM"));
+		exports["ReactTinymceSamanage"] = factory(require("React"), require("ReactDOM"));
 	else
-		root["ReactTinymce"] = factory(root["React"], root["ReactDOM"]);
+		root["ReactTinymceSamanage"] = factory(root["React"], root["ReactDOM"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -135,7 +135,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	
 	    var editor = tinymce.EditorManager.get(this.id);
-	    if (!(0, _lodashLangIsEqual2['default'])(editor.getContent({ format: 'html' }), nextProps.content)) {
+	    if (editor && editor.serializer && !(0, _lodashLangIsEqual2['default'])(editor.getContent({ format: 'html' }), nextProps.content)) {
 	      editor.setContent(nextProps.content);
 	
 	      editor.selection.select(editor.getBody(), true);
@@ -1973,4 +1973,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=react-tinymce.js.map
+//# sourceMappingURL=react-tinymce-samanage.js.map

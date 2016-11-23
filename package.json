@@ -1,6 +1,6 @@
 {
-  "name": "react-tinymce",
-  "version": "0.5.2",
+  "name": "react-tinymce-samanage",
+  "version": "0.5.3",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "tinymce",
     "react-component"
   ],
-  "author": "Matt Zabriskie",
+  "author": "Samanage",
   "license": "MIT",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
