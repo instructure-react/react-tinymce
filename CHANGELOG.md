@@ -1,9 +1,6 @@
 v0.5.2 - Wed, 23 Nov 2016 07:11:28 GMT
 --------------------------------------
 
-- 
-
-
 - added support for content update via redux form
 
 
