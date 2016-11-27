@@ -1,11 +1,12 @@
 {
   "name": "react-tinymce-samanage",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
-    "start": "node_modules/.bin/rackt server"
+    "start": "node_modules/.bin/rackt server",
+    "release": "./node_modules/.bin/rackt release"
   },
   "repository": {
     "type": "git",
