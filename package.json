@@ -1,6 +1,6 @@
 {
   "name": "react-tinymce-samanage",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
