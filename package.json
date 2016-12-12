@@ -1,11 +1,12 @@
 {
-  "name": "react-tinymce",
-  "version": "0.5.1",
+  "name": "react-tinymce-samanage",
+  "version": "0.5.6",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
-    "start": "node_modules/.bin/rackt server"
+    "start": "node_modules/.bin/rackt server",
+    "release": "./node_modules/.bin/rackt release"
   },
   "repository": {
     "type": "git",
@@ -16,7 +17,7 @@
     "tinymce",
     "react-component"
   ],
-  "author": "Matt Zabriskie",
+  "author": "Samanage",
   "license": "MIT",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",

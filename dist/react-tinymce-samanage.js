@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define(["React", "ReactDOM"], factory);
 	else if(typeof exports === 'object')
-		exports["ReactTinymce"] = factory(require("React"), require("ReactDOM"));
+		exports["ReactTinymceSamanage"] = factory(require("React"), require("ReactDOM"));
 	else
-		root["ReactTinymce"] = factory(root["React"], root["ReactDOM"]);
+		root["ReactTinymceSamanage"] = factory(root["React"], root["ReactDOM"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE_2__, __WEBPACK_EXTERNAL_MODULE_3__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -126,16 +126,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  componentWillReceiveProps: function componentWillReceiveProps(nextProps) {
-	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config)) {
-	      this._init(nextProps.config, nextProps.content);
-	    }
 	    if (!(0, _lodashLangIsEqual2['default'])(this.props.id, nextProps.id)) {
 	      this.id = nextProps.id;
+	    }
+	    if (!(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config) || !(0, _lodashLangIsEqual2['default'])(this.props.id, nextProps.id)) {
+	      this._init((0, _lodashLangClone2['default'])(nextProps.config), nextProps.content);
+	      return;
+	    }
+	
+	    var editor = tinymce.EditorManager.get(this.id);
+	    if (editor && editor.serializer && !(0, _lodashLangIsEqual2['default'])(editor.getContent({ format: 'html' }), nextProps.content)) {
+	      editor.setContent(nextProps.content);
+	
+	      editor.selection.select(editor.getBody(), true);
+	      editor.selection.collapse(false);
 	    }
 	  },
 	
 	  shouldComponentUpdate: function shouldComponentUpdate(nextProps) {
-	    return !(0, _lodashLangIsEqual2['default'])(this.props.content, nextProps.content) || !(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config);
+	    return !(0, _lodashLangIsEqual2['default'])(this.props.config, nextProps.config);
 	  },
 	
 	  componentWillUnmount: function componentWillUnmount() {
@@ -1964,4 +1973,4 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-//# sourceMappingURL=react-tinymce.js.map
+//# sourceMappingURL=react-tinymce-samanage.js.map
