@@ -1,6 +1,6 @@
 {
   "name": "react-tinymce",
-  "version": "0.5.1",
+  "version": "0.5.1-sci.1",
   "description": "React TinyMCE component",
   "main": "dist/react-tinymce.js",
   "scripts": {
