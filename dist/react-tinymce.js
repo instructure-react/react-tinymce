@@ -150,14 +150,21 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      return this.props.config.inline ? _react2.default.createElement('div', {
+	      var _props = this.props,
+	          RootTag = _props.rootTag,
+	          config = _props.config,
+	          className = _props.className,
+	          content = _props.content;
+
+
+	      return config.inline ? _react2.default.createElement(RootTag, {
 	        id: this.id,
-	        className: this.props.className,
-	        dangerouslySetInnerHTML: { __html: this.props.content }
+	        className: className,
+	        dangerouslySetInnerHTML: { __html: content }
 	      }) : _react2.default.createElement('textarea', {
 	        id: this.id,
-	        className: this.props.className,
-	        defaultValue: this.props.content
+	        className: className,
+	        defaultValue: content
 	      });
 	    }
 	  }, {
@@ -223,7 +230,8 @@
 	  config: _react.PropTypes.object,
 	  content: _react.PropTypes.string,
 	  id: _react.PropTypes.string,
-	  className: _react.PropTypes.string
+	  className: _react.PropTypes.string,
+	  rootTag: _react.PropTypes.string.isRequired
 	};
 
 	// add handler propTypes

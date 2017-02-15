@@ -2,7 +2,7 @@
   "name": "react-tinymce",
   "version": "0.5.1",
   "description": "React TinyMCE component",
-  "main": "lib/main.js",
+  "main": "dist/react-tinymce.js",
   "scripts": {
     "build": "rimraf build && webpack",
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
