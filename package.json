@@ -1,6 +1,6 @@
 {
   "name": "react-tinymce",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "react-dom": "^15.0.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^4.17.4"
   }
 }
