@@ -1,8 +1,8 @@
 {
   "name": "react-tinymce-editor",
-  "version": "0.8.7",
+  "version": "0.8.8",
   "description": "React TinyMCE Editor component",
-  "main": "lib/main.js",
+  "main": "/build/lib/main.js",
   "scripts": {
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
     "start": "node_modules/.bin/rackt server",
@@ -21,6 +21,9 @@
     "react-wyswing",
     "wyswwing-editor-for-react"
   ],
+  "plugins": [
+    "karma-mocha"
+  ],
   "author": "Matt Zabriskie, Abhimanyu Singh rathore",
   "license": "MIT",
   "peerDependencies": {
@@ -28,7 +31,8 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "rackt-cli": "^0.5.3",
+    "escope": "^3.3.0",
+    "rackt-cli": "0.5.3",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
