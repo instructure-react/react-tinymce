@@ -28,6 +28,7 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
+    "lodash": "^4.17.4",
     "rackt-cli": "^0.5.3",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
