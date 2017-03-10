@@ -1,6 +1,6 @@
 {
   "name": "react-tinymce-editor",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "React TinyMCE Editor component",
   "main": "lib/main.js",
   "scripts": {
@@ -25,8 +25,7 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
-    "react-dom": "^0.14.0 || ^15.0.0",
-    "lodash": "^3.9.3 || ^4.0.0"	
+    "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
     "rackt-cli": "^0.5.3",
@@ -34,6 +33,6 @@
     "react-dom": "^15.0.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^4.17.4"
   }
 }
