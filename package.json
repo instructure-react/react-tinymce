@@ -2,13 +2,14 @@
   "name": "react-tinymce-editor",
   "version": "0.8.8",
   "description": "React TinyMCE Editor component",
-  "main": "/build/lib/main.js",
+  "main": "lib/main.js",
   "scripts": {
     "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
     "start": "node_modules/.bin/rackt server",
     "build": "node_modules/.bin/rackt build",
     "pages": "node_modules/.bin/rackt pages",
-    "release": "node_modules/.bin/rackt release"
+    "release": "node_modules/.bin/rackt release",
+    "preview": "node_modules/.bin/rackt release --preview"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,7 @@
   },
   "devDependencies": {
     "escope": "^3.3.0",
-    "rackt-cli": "0.5.3",
+    "rackt-cli": "^0.8.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
