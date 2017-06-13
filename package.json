@@ -4,8 +4,8 @@
   "description": "React TinyMCE component",
   "main": "lib/main.js",
   "scripts": {
-    "test": "node_modules/.bin/rackt test --single-run --browsers Firefox",
-    "start": "node_modules/.bin/rackt server"
+    "test": "karma start --single-run",
+    "test-watch": "karma start"
   },
   "repository": {
     "type": "git",
@@ -23,11 +23,31 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "chai": "^4.0.2",
+    "domify": "^1.4.0",
+    "karma": "^1.7.0",
+    "karma-browserify": "^5.1.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-spec-reporter": "0.0.31",
+    "mocha": "^3.4.2",
+    "mocha-test-container-support": "^0.2.0",
     "rackt-cli": "^0.5.3",
-    "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react": "^15.6.0",
+    "react-dom": "^15.6.0",
+    "sinon": "^2.3.4",
+    "tinymce": "^4.6.4",
+    "watchify": "^3.9.0"
   },
   "dependencies": {
-    "lodash": "^3.9.3"
+    "lodash": "^3.9.3",
+    "prop-types": "^15.5.10"
   }
 }
