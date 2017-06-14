@@ -1,5 +1,5 @@
 {
-  "name": "react-tinymce",
+  "name": "react-mce",
   "version": "0.5.1",
   "description": "React TinyMCE component",
   "main": "lib/main.js",
@@ -9,14 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/instructure-react/react-tinymce.git"
+    "url": "https://github.com/janstuemmel/react-mce.git"
   },
-  "homepage": "https://github.com/instructure-react/react-tinymce",
+  "homepage": "https://github.com/janstuemmel/react-mce",
   "keywords": [
     "tinymce",
     "react-component"
   ],
   "author": "Matt Zabriskie",
+  "contributors": [
+    "Jan Stümmel"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0",
@@ -29,6 +32,13 @@
     "browserify": "^14.4.0",
     "chai": "^4.0.2",
     "domify": "^1.4.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-if": "^2.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
     "karma": "^1.7.0",
     "karma-browserify": "^5.1.1",
     "karma-chai": "^0.1.0",
@@ -44,6 +54,8 @@
     "react-dom": "^15.6.0",
     "sinon": "^2.3.4",
     "tinymce": "^4.6.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.9.0"
   },
   "dependencies": {
