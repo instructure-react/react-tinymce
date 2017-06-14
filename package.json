@@ -5,7 +5,8 @@
   "main": "lib/main.js",
   "scripts": {
     "test": "karma start --single-run",
-    "test-watch": "karma start"
+    "test-watch": "karma start",
+    "release": "gulp npm-release && npm version $1"
   },
   "repository": {
     "type": "git",

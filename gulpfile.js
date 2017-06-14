@@ -30,6 +30,8 @@ gulp.task('pages', [ 'example' ], function() {
     .pipe(ghPages());
 });
 
+gulp.task('npm-release', [ 'build', 'pages' ]);
+
 function bundle(src, name, outDir, min) {
   process.env.NODE_ENV = min ? 'production' : 'development';
   var b = browserify({
