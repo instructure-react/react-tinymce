@@ -23,7 +23,7 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "rackt-cli": "^0.5.3",
+    "rackt-cli": "^0.8.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
   },
