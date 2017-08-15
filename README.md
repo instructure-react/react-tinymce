@@ -46,7 +46,7 @@ ReactDOM.render(<App/>, document.getElementById('container'));
 This component depends on `tinymce` being globally accessible.
 
 ```html
-<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 ```
 
 ## Contributing
