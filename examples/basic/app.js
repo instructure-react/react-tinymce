@@ -1,4 +1,5 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 import ReactDOM from 'react-dom';
 import TinyMCE from '../../lib/main';
 
@@ -17,7 +18,7 @@ const STYLES = {
   }
 };
 
-const App = React.createClass({
+const App = createReactClass({
   getInitialState() {
     return {
       content: '<p><strong>Welcome to react-tinymce</strong></p>'
